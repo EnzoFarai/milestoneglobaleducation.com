@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Milestone Global Education</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/modals.css">
+    <style>
+        .about-hero {
+            background: url('assets/images/about/hero.jpg') center/cover;
+            color: white;
+            text-align: center;
+            padding: 150px 0 100px;
+            margin-top: 70px;
+            position: relative;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .about-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .about-hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .mission-vision {
+            background-color: #f8f9fa;
+        }
+
+        .mv-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .mv-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px 25px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: var(--transition);
+            border-top: 3px solid var(--primary);
+        }
+
+        .mv-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .mv-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .mv-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+
+        .mv-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto 50px;
+            text-align: center;
+        }
+
+        .story-content h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .story-content p {
+            color: var(--gray);
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .values-block {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .values-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .value-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .value-icon {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .value-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .value-content p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .mv-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .values-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-text">Milestone Global Education</div>
+            </div>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="destinations.html">Study Destinations</a></li>
+                    <li><a href="success-stories.html">Success Stories</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="partner-with-us.html">Partner With Us</a></li>
+                </ul>
+                <div class="mobile-menu" id="mobile-menu"><i class="fas fa-bars"></i></div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>About Milestone Global Education</h1>
+            <p>Your trusted partner in achieving academic success worldwide</p>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-vision">
+        <div class="container">
+            <div class="mv-grid">
+                <div class="mv-card">
+                    <div class="mv-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Our Mission</h3>
+                    <p>To guide and support students in achieving their academic and career goals globally.</p>
+                </div>
+                <div class="mv-card">
+                    <div class="mv-icon"><i class="fas fa-eye"></i></div>
+                    <h3>Our Vision</h3>
+                    <p>To be the most trusted education partner for students worldwide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story & Values -->
+    <section>
+        <div class="container">
+            <div class="story-content">
+                <h3>Our Story</h3>
+                <p>Milestone Global Education was founded with a clear purpose: to make quality global education accessible to students from all backgrounds. Our journey began with the recognition that students need personalized guidance to navigate the complex process of studying abroad.</p>
+                <p>Since our establishment, we have helped thousands of students achieve their dreams of studying at prestigious institutions around the world, building a reputation for excellence and integrity in the education consultancy industry.</p>
+            </div>
+            
+            <div class="section-title" style="margin-top: 50px;">
+                <h2>Our Values</h2>
+            </div>
+            
+            <div class="values-block">
+                <div class="values-list">
+                    <div class="value-item">
+                        <div class="value-icon"><i class="fas fa-shield-alt"></i></div>
+                        <div class="value-content">
+                            <h4>Integrity</h4>
+                            <p>We maintain the highest ethical standards in all our interactions and services.</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon"><i class="fas fa-award"></i></div>
+                        <div class="value-content">
+                            <h4>Excellence</h4>
+                            <p>We strive for the highest quality in everything we do for our students.</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon"><i class="fas fa-handshake"></i></div>
+                        <div class="value-content">
+                            <h4>Commitment</h4>
+                            <p>We are dedicated to our students' success from start to finish.</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon"><i class="fas fa-user-graduate"></i></div>
+                        <div class="value-content">
+                            <h4>Student Success</h4>
+                            <p>Our primary focus is on achieving the best outcomes for our students.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <div class="modal-overlay" id="consultation-modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 class="modal-title">Book Your Consultation</h2>
+                <button class="close-modal" id="close-consultation-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="consultation-form">
+                    <div class="form-group">
+                        <label for="consultation-full-name" class="form-label">Full name</label>
+                        <input type="text" id="consultation-full-name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="consultation-email" class="form-label">Email</label>
+                        <input type="email" id="consultation-email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Mobile Number</label>
+                        <div class="phone-input-group">
+                            <div class="country-code-container">
+                                <input type="text" id="consultation-country-code" class="form-control" placeholder="Code">
+                                <div class="country-code-dropdown" id="consultation-country-code-dropdown"></div>
+                            </div>
+                            <div class="phone-number">
+                                <input type="tel" id="consultation-phone" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="consultation-country-residence" class="form-label">Country of Residence</label>
+                        <input type="text" id="consultation-country-residence" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="consultation-nationality" class="form-label">Nationality</label>
+                        <input type="text" id="consultation-nationality" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="consultation-course" class="form-label">Desired Course/Program</label>
+                        <input type="text" id="consultation-course" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="consultation-study-destination" class="form-label">Preferred study destination</label>
+                        <div class="select-wrapper">
+                            <select id="consultation-study-destination" class="form-control" required>
+                                <option value="">Select destination</option>
+                                <option value="India">India</option>
+                                <option value="China">China</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Australia">Australia</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="consultation-study-level" class="form-label">Level of study</label>
+                        <div class="select-wrapper">
+                            <select id="consultation-study-level" class="form-control" required>
+                                <option value="">Select level</option>
+                                <option value="Bachelor's">Bachelor's</option>
+                                <option value="Master's">Master's</option>
+                                <option value="Diploma">Diploma</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="consultation-study-year" class="form-label">Preferred study year</label>
+                        <div class="select-wrapper">
+                            <select id="consultation-study-year" class="form-control" required>
+                                <option value="">Select year</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                                <option value="2028">2028</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="consultation-intake-month" class="form-label">Preferred intake month</label>
+                        <div class="select-wrapper">
+                            <select id="consultation-intake-month" class="form-control" required>
+                                <option value="">Select month</option>
+                                <option value="January">January</option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="October">October</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-footer">
+                        <div class="terms-checkbox">
+                            <input type="checkbox" id="consultation-terms" checked required>
+                            <label for="consultation-terms">By submitting, you agree to our <a href="#">Privacy Policy</a></label>
+                        </div>
+                        <button type="submit" class="submit-btn">Book Consultation</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="apply-modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 class="modal-title">Start Your Application</h2>
+                <button class="close-modal" id="close-apply-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="apply-form">
+                    <div class="form-group">
+                        <label for="apply-full-name" class="form-label">Full name</label>
+                        <input type="text" id="apply-full-name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apply-email" class="form-label">Email</label>
+                        <input type="email" id="apply-email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Mobile Number</label>
+                        <div class="phone-input-group">
+                            <div class="country-code-container">
+                                <input type="text" id="apply-country-code" class="form-control" placeholder="Code">
+                                <div class="country-code-dropdown" id="apply-country-code-dropdown"></div>
+                            </div>
+                            <div class="phone-number">
+                                <input type="tel" id="apply-phone" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="apply-country-residence" class="form-label">Country of Residence</label>
+                        <input type="text" id="apply-country-residence" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apply-nationality" class="form-label">Nationality</label>
+                        <input type="text" id="apply-nationality" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apply-course" class="form-label">Desired Course/Program</label>
+                        <input type="text" id="apply-course" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apply-study-destination" class="form-label">Preferred study destination</label>
+                        <div class="select-wrapper">
+                            <select id="apply-study-destination" class="form-control" required>
+                                <option value="">Select destination</option>
+                                <option value="India">India</option>
+                                <option value="China">China</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Australia">Australia</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="apply-study-level" class="form-label">Level of study</label>
+                        <div class="select-wrapper">
+                            <select id="apply-study-level" class="form-control" required>
+                                <option value="">Select level</option>
+                                <option value="Bachelor's">Bachelor's</option>
+                                <option value="Master's">Master's</option>
+                                <option value="Diploma">Diploma</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="apply-study-year" class="form-label">Preferred study year</label>
+                        <div class="select-wrapper">
+                            <select id="apply-study-year" class="form-control" required>
+                                <option value="">Select year</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                                <option value="2028">2028</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="apply-intake-month" class="form-label">Preferred intake month</label>
+                        <div class="select-wrapper">
+                            <select id="apply-intake-month" class="form-control" required>
+                                <option value="">Select month</option>
+                                <option value="January">January</option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="October">October</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-footer">
+                        <div class="terms-checkbox">
+                            <input type="checkbox" id="apply-terms" checked required>
+                            <label for="apply-terms">By submitting, you agree to our <a href="#">Privacy Policy</a></label>
+                        </div>
+                        <button type="submit" class="submit-btn">Submit Application</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Milestone Global Education</h3>
+                    <p>Your trusted partner for international education and career guidance.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/918699750645" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="destinations.html">Study Destinations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> <a href="tel:+918699750645">+91 86997 50645</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:milestoneglobaledu@gmail.com">milestoneglobaledu@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Milestone Global Education</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/modals.js"></script>
+</body>
+</html>
