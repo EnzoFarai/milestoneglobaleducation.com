@@ -1,5 +1,5 @@
-// Function to load header and footer dynamically
-function loadHeaderFooter() {
+// Function to load header, footer, and modals dynamically
+function loadHeaderFooterAndModals() {
     // Load header
     fetch('header.html')
         .then(response => response.text())
@@ -16,6 +16,21 @@ function loadHeaderFooter() {
             document.getElementById('footer-placeholder').innerHTML = data;
         })
         .catch(error => console.error('Error loading footer:', error));
+    
+    // Load modals
+    Promise.all([
+        fetch('consultation-modal.html').then(response => response.text()),
+        fetch('application-modal.html').then(response => response.text())
+    ])
+    .then(([consultationModal, applicationModal]) => {
+        const modalsContainer = document.getElementById('modals-placeholder');
+        if (modalsContainer) {
+            modalsContainer.innerHTML = consultationModal + applicationModal;
+            // Re-initialize modals after they're loaded
+            setTimeout(initializeModals, 100);
+        }
+    })
+    .catch(error => console.error('Error loading modals:', error));
 }
 
 // Initialize header functionality
@@ -64,5 +79,5 @@ function initializeHeader() {
     });
 }
 
-// Load header and footer when DOM is ready
-document.addEventListener('DOMContentLoaded', loadHeaderFooter);
+// Load header, footer and modals when DOM is ready
+document.addEventListener('DOMContentLoaded', loadHeaderFooterAndModals);
