@@ -1854,3 +1854,237 @@ textarea.form-control {
         gap: 2px;
     }
 }
+
+/* Destinations Page Specific Styles */
+.destinations-hero {
+    background: url('../assets/images/destinations-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 150px 0 100px;
+    margin-top: 70px;
+    position: relative;
+}
+
+.destinations-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.destinations-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.destinations-hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.destinations-hero p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+/* Destinations Grid */
+.destinations-grid {
+    background-color: #f8f9fa;
+}
+
+.destination-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.destination-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+}
+
+.destination-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.destination-image {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.destination-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.destination-card:hover .destination-image img {
+    transform: scale(1.05);
+}
+
+.destination-flag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 25px;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.destination-flag img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.destination-content {
+    padding: 25px;
+}
+
+.destination-content h3 {
+    font-size: 1.4rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.destination-content h3 i {
+    color: var(--secondary);
+}
+
+.destination-section {
+    margin-bottom: 20px;
+}
+
+.destination-section h4 {
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.destination-section h4 i {
+    color: var(--secondary);
+    font-size: 0.9rem;
+}
+
+.destination-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.destination-section li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+.destination-section li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--secondary);
+    font-weight: bold;
+}
+
+.destination-cta {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Why Choose Section */
+.why-choose {
+    background: linear-gradient(135deg, var(--primary), #0d2b5e);
+    color: white;
+}
+
+.why-choose .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.why-choose .benefit-card {
+    text-align: center;
+    padding: 30px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+}
+
+.why-choose .benefit-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.why-choose .benefit-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--secondary);
+}
+
+.why-choose .benefit-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.why-choose .benefit-card p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Responsive Design for Destinations Page */
+@media (max-width: 768px) {
+    .destinations-hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .destination-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .destination-card {
+        margin: 0 10px;
+    }
+    
+    .why-choose .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .destination-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .destination-content {
+        padding: 20px;
+    }
+    
+    .destination-content h3 {
+        font-size: 1.2rem;
+    }
+}
