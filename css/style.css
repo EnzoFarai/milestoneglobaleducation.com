@@ -440,7 +440,7 @@ nav ul li a:hover::after {
 
 /* Hero Section */
 .hero {
-    background: url('../assets/images/hero-bg.jpg');
+    background: url('assets/images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
     color: white;
@@ -953,7 +953,7 @@ footer {
 
 /* Partnership Styles */
 .partner-hero {
-    background: linear-gradient(rgba(26, 75, 140, 0.85), rgba(26, 75, 140, 0.9)), url('../assets/images/partnership-bg.jpg');
+    background: linear-gradient(rgba(26, 75, 140, 0.85), rgba(26, 75, 140, 0.9)), url('assets/images/partnership-bg.jpg');
     background-size: cover;
     background-position: center;
     color: white;
@@ -1220,7 +1220,7 @@ textarea.form-control {
 
 /* Services Page Styles */
 .services-hero {
-    background: url('../assets/images/services-bg.jpg');
+    background: url('assets/images/services-bg.jpg');
     background-size: cover;
     background-position: center;
     color: white;
@@ -1341,27 +1341,27 @@ textarea.form-control {
 
 /* Background images for each service */
 .counseling .service-background {
-    background-image: url('../assets/images/counseling-bg.jpg');
+    background-image: url('assets/images/counseling-bg.jpg');
 }
 
 .admission .service-background {
-    background-image: url('../assets/images/admission-bg.jpg');
+    background-image: url('assets/images/admission-bg.jpg');
 }
 
 .visa .service-background {
-    background-image: url('../assets/images/visa-bg.jpg');
+    background-image: url('assets/images/visa-bg.jpg');
 }
 
 .career .service-background {
-    background-image: url('../assets/images/career-bg.jpg');
+    background-image: url('assets/images/career-bg.jpg');
 }
 
 .travel .service-background {
-    background-image: url('../assets/images/travel-bg.jpg');
+    background-image: url('assets/images/travel-bg.jpg');
 }
 
 .language .service-background {
-    background-image: url('../assets/images/language-bg.jpg');
+    background-image: url('assets/images/language-bg.jpg');
 }
 
 /* Responsive Design */
@@ -1505,7 +1505,7 @@ textarea.form-control {
 
 /* Destinations Page Styles */
 .destinations-hero {
-    background: linear-gradient(rgba(26, 75, 140, 0.85), rgba(26, 75, 140, 0.9)), url('../assets/images/destinations-hero.jpg');
+    background: linear-gradient(rgba(26, 75, 140, 0.85), rgba(26, 75, 140, 0.9)), url('assets/images/destinations-hero.jpg');
     background-size: cover;
     background-position: center;
     color: white;
