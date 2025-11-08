@@ -380,8 +380,8 @@ nav ul li a:hover::after {
 }
 
 .form-footer {
-    margin-top: 15px;
-    padding-top: 15px;
+    margin-top: 10px; /* ← SMALLER MARGIN */
+    padding-top: 10px; /* ← SMALLER PADDING */
     border-top: 1px solid #e1e5e9;
     flex-shrink: 0;
 }
@@ -389,7 +389,7 @@ nav ul li a:hover::after {
 .terms-checkbox {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 15px;
+    margin-bottom: 10px; /* ← SMALLER MARGIN */
 }
 
 .terms-checkbox input {
