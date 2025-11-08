@@ -4,8 +4,11 @@ function loadHeaderFooterAndModals() {
     fetch('header.html')
         .then(response => response.text())
         .then(data => {
-            document.getElementById('header-placeholder').innerHTML = data;
-            initializeHeader();
+            const headerContainer = document.getElementById('header-placeholder');
+            if (headerContainer) {
+                headerContainer.innerHTML = data;
+                initializeHeader();
+            }
         })
         .catch(error => console.error('Error loading header:', error));
     
@@ -13,11 +16,14 @@ function loadHeaderFooterAndModals() {
     fetch('footer.html')
         .then(response => response.text())
         .then(data => {
-            document.getElementById('footer-placeholder').innerHTML = data;
+            const footerContainer = document.getElementById('footer-placeholder');
+            if (footerContainer) {
+                footerContainer.innerHTML = data;
+            }
         })
         .catch(error => console.error('Error loading footer:', error));
     
-    // Load modals
+    // Load modals (consultation + application)
     Promise.all([
         fetch('consultation-modal.html').then(response => response.text()),
         fetch('application-modal.html').then(response => response.text())
@@ -26,8 +32,10 @@ function loadHeaderFooterAndModals() {
         const modalsContainer = document.getElementById('modals-placeholder');
         if (modalsContainer) {
             modalsContainer.innerHTML = consultationModal + applicationModal;
-            // Re-initialize modals after they're loaded
-            setTimeout(initializeModals, 100);
+            // Re-initialize modals after they're loaded (if needed)
+            if (typeof initializeModals === 'function') {
+                setTimeout(initializeModals, 100);
+            }
         }
     })
     .catch(error => console.error('Error loading modals:', error));
@@ -40,7 +48,7 @@ function initializeHeader() {
     const navMenu = document.getElementById('nav-menu');
     
     if (mobileMenu && navMenu) {
-        mobileMenu.addEventListener('click', function() {
+        mobileMenu.addEventListener('click', () => {
             navMenu.classList.toggle('active');
         });
     }
@@ -61,10 +69,10 @@ function initializeHeader() {
             e.preventDefault();
             
             const targetId = this.getAttribute('href');
-            if(targetId === '#') return;
+            if (targetId === '#') return;
             
             const targetElement = document.querySelector(targetId);
-            if(targetElement) {
+            if (targetElement) {
                 // Close mobile menu when a link is clicked
                 if (navMenu) {
                     navMenu.classList.remove('active');
@@ -79,5 +87,5 @@ function initializeHeader() {
     });
 }
 
-// Load header, footer and modals when DOM is ready
+// Load header, footer, and modals when DOM is ready
 document.addEventListener('DOMContentLoaded', loadHeaderFooterAndModals);
