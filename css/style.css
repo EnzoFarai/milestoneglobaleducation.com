@@ -1855,7 +1855,7 @@ textarea.form-control {
     }
 }
 
-/* Destinations Page Specific Styles */
+/* Destinations Page Styles */
 .destinations-hero {
     background: url('../assets/images/destinations-hero.jpg');
     background-size: cover;
@@ -1894,7 +1894,6 @@ textarea.form-control {
     margin: 0 auto 30px;
 }
 
-/* Destinations Grid */
 .destinations-grid {
     background-color: #f8f9fa;
 }
@@ -2013,20 +2012,19 @@ textarea.form-control {
     margin-top: 20px;
 }
 
-/* Why Choose Section */
 .why-choose {
     background: linear-gradient(135deg, var(--primary), #0d2b5e);
     color: white;
 }
 
-.why-choose .benefits-grid {
+.benefits-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
     margin-top: 40px;
 }
 
-.why-choose .benefit-card {
+.benefit-card {
     text-align: center;
     padding: 30px 20px;
     background: rgba(255, 255, 255, 0.1);
@@ -2035,28 +2033,28 @@ textarea.form-control {
     transition: var(--transition);
 }
 
-.why-choose .benefit-card:hover {
+.benefit-card:hover {
     transform: translateY(-5px);
     background: rgba(255, 255, 255, 0.15);
 }
 
-.why-choose .benefit-icon {
+.benefit-icon {
     font-size: 2.5rem;
     margin-bottom: 20px;
     color: var(--secondary);
 }
 
-.why-choose .benefit-card h3 {
+.benefit-card h3 {
     font-size: 1.2rem;
     margin-bottom: 15px;
 }
 
-.why-choose .benefit-card p {
+.benefit-card p {
     font-size: 0.9rem;
     opacity: 0.9;
 }
 
-/* Responsive Design for Destinations Page */
+/* Update responsive design for destinations */
 @media (max-width: 768px) {
     .destinations-hero h1 {
         font-size: 2.2rem;
@@ -2070,7 +2068,7 @@ textarea.form-control {
         margin: 0 10px;
     }
     
-    .why-choose .benefits-grid {
+    .benefits-grid {
         grid-template-columns: 1fr;
     }
 }
