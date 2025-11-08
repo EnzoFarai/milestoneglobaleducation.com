@@ -1,3 +1,71 @@
+// Function to initialize modals
+function initializeModals() {
+    // Initialize country code dropdowns
+    initializeCountryCodeDropdowns();
+    
+    // Add event listeners to consultation buttons
+    const consultationButtons = document.querySelectorAll('.consultation-btn, .get-started-btn');
+    consultationButtons.forEach(button => {
+        // Remove any existing listeners to prevent duplicates
+        button.replaceWith(button.cloneNode(true));
+    });
+    
+    // Re-select and add listeners to consultation buttons
+    document.querySelectorAll('.consultation-btn, .get-started-btn').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            openConsultationModal();
+        });
+    });
+    
+    // Add event listeners to application buttons
+    const applicationButtons = document.querySelectorAll('.apply-now-btn');
+    applicationButtons.forEach(button => {
+        // Remove any existing listeners to prevent duplicates
+        button.replaceWith(button.cloneNode(true));
+    });
+    
+    // Re-select and add listeners to application buttons
+    document.querySelectorAll('.apply-now-btn').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            openApplicationModal();
+        });
+    });
+    
+    // Add event listeners to close buttons
+    const closeButtons = document.querySelectorAll('.close-modal');
+    closeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const modal = this.closest('.modal-overlay');
+            if (modal) {
+                closeModal(modal.id);
+            }
+        });
+    });
+    
+    // Close modal when clicking outside
+    const modals = document.querySelectorAll('.modal-overlay');
+    modals.forEach(modal => {
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal(this.id);
+            }
+        });
+    });
+    
+    // Add event listeners to forms
+    const consultationForm = document.getElementById('consultation-form');
+    if (consultationForm) {
+        consultationForm.addEventListener('submit', handleConsultationForm);
+    }
+    
+    const applicationForm = document.getElementById('application-form');
+    if (applicationForm) {
+        applicationForm.addEventListener('submit', handleApplicationForm);
+    }
+}
+
 // Country data for phone codes
 const countries = [
     { name: "Afghanistan", code: "+93" },
@@ -83,6 +151,8 @@ countries.sort((a, b) => a.name.localeCompare(b.name));
 
 // Function to populate country dropdown
 function populateCountryDropdown(dropdownElement, filter = "") {
+    if (!dropdownElement) return;
+    
     dropdownElement.innerHTML = "";
     const filteredCountries = countries.filter(country => 
         country.name.toLowerCase().includes(filter.toLowerCase()) || 
@@ -143,6 +213,8 @@ function openConsultationModal() {
     if (modal) {
         modal.classList.add('active');
         document.body.style.overflow = 'hidden'; // Prevent scrolling
+    } else {
+        console.error('Consultation modal not found');
     }
 }
 
@@ -152,6 +224,8 @@ function openApplicationModal() {
     if (modal) {
         modal.classList.add('active');
         document.body.style.overflow = 'hidden'; // Prevent scrolling
+    } else {
+        console.error('Application modal not found');
     }
 }
 
@@ -242,52 +316,10 @@ function handleApplicationForm(e) {
     alert('Redirecting to WhatsApp to complete your application...');
 }
 
-// Initialize modals when DOM is ready
+// Initialize modals when DOM is ready (fallback)
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize country code dropdowns
-    initializeCountryCodeDropdowns();
-    
-    // Add event listeners to consultation buttons
-    const consultationButtons = document.querySelectorAll('.consultation-btn, .get-started-btn');
-    consultationButtons.forEach(button => {
-        button.addEventListener('click', openConsultationModal);
-    });
-    
-    // Add event listeners to application buttons
-    const applicationButtons = document.querySelectorAll('.apply-now-btn');
-    applicationButtons.forEach(button => {
-        button.addEventListener('click', openApplicationModal);
-    });
-    
-    // Add event listeners to close buttons
-    const closeButtons = document.querySelectorAll('.close-modal');
-    closeButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const modal = this.closest('.modal-overlay');
-            if (modal) {
-                closeModal(modal.id);
-            }
-        });
-    });
-    
-    // Close modal when clicking outside
-    const modals = document.querySelectorAll('.modal-overlay');
-    modals.forEach(modal => {
-        modal.addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal(this.id);
-            }
-        });
-    });
-    
-    // Add event listeners to forms
-    const consultationForm = document.getElementById('consultation-form');
-    if (consultationForm) {
-        consultationForm.addEventListener('submit', handleConsultationForm);
-    }
-    
-    const applicationForm = document.getElementById('application-form');
-    if (applicationForm) {
-        applicationForm.addEventListener('submit', handleApplicationForm);
+    // If modals are already in the HTML (not dynamically loaded), initialize them
+    if (document.getElementById('consultation-modal') || document.getElementById('application-modal')) {
+        initializeModals();
     }
 });
