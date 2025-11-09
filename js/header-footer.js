@@ -16,6 +16,30 @@ function loadHeaderFooter() {
             document.getElementById('footer-placeholder').innerHTML = data;
         })
         .catch(error => console.error('Error loading footer:', error));
+    
+    // Load modals
+    loadModals();
+}
+
+// Function to load modals
+function loadModals() {
+    // Load consultation modal
+    fetch('consultation-modal.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('modals-placeholder').innerHTML += data;
+        })
+        .catch(error => console.error('Error loading consultation modal:', error));
+    
+    // Load application modal
+    fetch('application-modal.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('modals-placeholder').innerHTML += data;
+            // Initialize modals after they are loaded
+            setTimeout(initializeModals, 100);
+        })
+        .catch(error => console.error('Error loading application modal:', error));
 }
 
 // Initialize header functionality
