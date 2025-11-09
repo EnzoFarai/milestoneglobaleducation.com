@@ -2113,236 +2113,138 @@ textarea.form-control {
     }
         }
 
-/* Destinations Page Styles */
-.destinations-hero {
-    background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-    background-size: cover;
-    background-position: center;
+/* Blog Page Styles */
+.page-header {
+    background: linear-gradient(135deg, var(--primary), #0d2b5e);
     color: white;
     text-align: center;
-    padding: 150px 0 100px;
+    padding: 150px 0 60px;
     margin-top: 70px;
-    position: relative;
 }
 
-.destinations-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
 }
 
-.destinations-hero .container {
-    position: relative;
-    z-index: 1;
-}
-
-.destinations-hero h1 {
-    font-size: 2.8rem;
-    margin-bottom: 20px;
-    line-height: 1.2;
-}
-
-.destinations-hero p {
-    font-size: 1.1rem;
+.page-header p {
     max-width: 700px;
-    margin: 0 auto 30px;
+    margin: 0 auto;
+    font-size: 1rem;
 }
 
-/* Destinations Grid */
-.destinations-grid {
+/* Blog Section */
+.blog-section {
+    padding: 60px 0;
     background-color: #f8f9fa;
 }
 
-.destination-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
+.blog-container {
+    display: flex;
+    justify-content: center;
 }
 
-.destination-card {
+/* Sidebar */
+.sidebar {
+    max-width: 400px;
+    width: 100%;
+}
+
+.sidebar-widget {
     background-color: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    transition: var(--transition);
-}
-
-.destination-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-}
-
-.destination-image {
-    height: 200px;
-    position: relative;
-    overflow: hidden;
-}
-
-.destination-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--transition);
-}
-
-.destination-card:hover .destination-image img {
-    transform: scale(1.05);
-}
-
-.destination-flag {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    width: 40px;
-    height: 25px;
-    border-radius: 3px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.destination-flag img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.destination-content {
+    border-radius: 8px;
     padding: 25px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    border-left: 3px solid var(--primary);
 }
 
-.destination-content h3 {
-    font-size: 1.4rem;
+.sidebar-widget h3 {
+    font-size: 1.2rem;
     color: var(--primary);
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.destination-content h3 i {
-    color: var(--secondary);
-}
-
-.destination-section {
     margin-bottom: 20px;
-}
-
-.destination-section h4 {
-    font-size: 1.1rem;
-    color: var(--primary);
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.destination-section h4 i {
-    color: var(--secondary);
-    font-size: 0.9rem;
-}
-
-.destination-section ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.destination-section li {
-    margin-bottom: 8px;
-    padding-left: 20px;
     position: relative;
-    font-size: 0.9rem;
-    color: var(--gray);
+    padding-bottom: 10px;
 }
 
-.destination-section li::before {
-    content: '✓';
+.sidebar-widget h3::after {
+    content: '';
     position: absolute;
+    width: 40px;
+    height: 2px;
+    background-color: var(--secondary);
+    bottom: 0;
     left: 0;
-    color: var(--secondary);
-    font-weight: bold;
 }
 
-.destination-cta {
-    text-align: center;
-    margin-top: 20px;
+.recent-posts-list {
+    list-style: none;
 }
 
-/* Why Choose Section */
-.why-choose {
-    background: linear-gradient(135deg, var(--primary), #0d2b5e);
-    color: white;
-}
-
-.benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.benefit-card {
-    text-align: center;
-    padding: 30px 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
+.recent-post-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     transition: var(--transition);
 }
 
-.benefit-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.15);
+.recent-post-item:hover {
+    transform: translateX(5px);
 }
 
-.benefit-icon {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+.recent-post-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.recent-post-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.recent-post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.recent-post-content h4 {
+    font-size: 0.9rem;
+    color: var(--primary);
+    margin-bottom: 5px;
+    line-height: 1.3;
+}
+
+.recent-post-content .recent-post-date {
+    font-size: 0.75rem;
     color: var(--secondary);
 }
 
-.benefit-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-}
-
-.benefit-card p {
-    font-size: 0.9rem;
-    opacity: 0.9;
-}
-
-/* Destinations Page Responsive Design */
+/* Blog Page Responsive Design */
 @media (max-width: 768px) {
-    .destinations-hero h1 {
-        font-size: 2.2rem;
+    .page-header h1 {
+        font-size: 1.8rem;
     }
     
-    .destination-cards {
-        grid-template-columns: 1fr;
+    .sidebar {
+        max-width: 100%;
     }
     
-    .destination-card {
-        margin: 0 10px;
+    .recent-post-item {
+        gap: 12px;
     }
     
-    .benefits-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 480px) {
-    .destination-cards {
-        grid-template-columns: 1fr;
+    .recent-post-image {
+        width: 60px;
+        height: 60px;
     }
     
-    .destination-content {
-        padding: 20px;
-    }
-    
-    .destination-content h3 {
-        font-size: 1.2rem;
+    .recent-post-content h4 {
+        font-size: 0.85rem;
     }
 }
