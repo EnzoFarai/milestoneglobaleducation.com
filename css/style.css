@@ -1865,7 +1865,7 @@ textarea.form-control {
 
 /* Destinations Page Styles */
 .destinations-hero {
-    background: url('../assets/images/destinations-hero.jpg'));
+    background: url('../assets/images/destinations-hero.jpg');
     background-size: cover;
     background-position: center;
     color: white;
