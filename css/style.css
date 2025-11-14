@@ -1516,7 +1516,7 @@ textarea.form-control {
 
 /* About Page Styles */
 .about-hero {
-    background: url('assets/images/about-hero.jpg');
+    background: url('../assets/images/about-hero.jpg');
     background-size: cover;
     background-position: center;
     color: white;
